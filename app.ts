@@ -23,8 +23,18 @@ if (person.role === Role.AUTHOR) {
     console.log("This person is an author.");
 }
 
-let favoriteActivities: string [];
+// let favoriteActivities: any;
+// favoriteActivities = "Sports";
+// console.log(favoriteActivities);
+
+// let favoriteActivities: any [];
+// favoriteActivities = ["Sports", 1];
+// console.log(favoriteActivities);
+
+let favoriteActivities: string[];
 favoriteActivities = ["Sports"];
+console.log(favoriteActivities);
+
 
 // for (const hobby of person.hobbies){
 //     console.log(hobby.toUpperCase());
