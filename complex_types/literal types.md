@@ -1,4 +1,4 @@
-Here's the script formatted as markdown with respective code snippets:
+## Literal Types
 
 ---
 
