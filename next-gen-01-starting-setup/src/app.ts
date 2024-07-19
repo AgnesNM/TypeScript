@@ -1,71 +1,99 @@
-// // function add (a:number, b:number){
-// //     let result;
-// //     result = a+b;
-// //     return result;
+// // // function add (a:number, b:number){
+// // //     let result;
+// // //     result = a+b;
+// // //     return result;
+// // // }
+
+// // // const add = (a: number, b:number) => {
+// // //     return a + b;
+// // // };
+
+// // const add = (a: number, b:number = 1) => a + b;
+
+// // // const printOutPut = (output:string | number) => console.log(output);
+
+// // const printOutPut: (a: number | string) => void =  output => console.log(output);
+
+// // printOutPut(add(5));
+
+// // const button = document.querySelector('button');
+
+// // if(button){
+// //     button.addEventListener('click', event => console.log(event));
 // // }
 
-// // const add = (a: number, b:number) => {
-// //     return a + b;
-// // };
+// const hobbies = ["sports", "cooking"];
 
-// const add = (a: number, b:number = 1) => a + b;
+// // console.log(hobbies[0]);
 
-// // const printOutPut = (output:string | number) => console.log(output);
-
-// const printOutPut: (a: number | string) => void =  output => console.log(output);
-
-// printOutPut(add(5));
-
-// const button = document.querySelector('button');
-
-// if(button){
-//     button.addEventListener('click', event => console.log(event));
-// }
-
-const hobbies = ["sports", "cooking"];
-
-// console.log(hobbies[0]);
-
-const activeHobbies = ["hiking"];
-
-// activeHobbies.push(hobbies[0], hobbies[1]);
-
-activeHobbies.push(...hobbies);
+// const activeHobbies = ["hiking"];
 
 // // activeHobbies.push(hobbies[0], hobbies[1]);
 
-// // console.log(activeHobbies);
+// activeHobbies.push(...hobbies);
 
-// const allHobbies = ["reading", ...hobbies];
+// // // activeHobbies.push(hobbies[0], hobbies[1]);
 
-// console.log(allHobbies);
+// // // console.log(activeHobbies);
 
-// const person = {
-//     name:"Max",
-//     age:30
-// };
+// // const allHobbies = ["reading", ...hobbies];
 
-// const copiedPerson = {...person};
-// console.log(copiedPerson);
+// // console.log(allHobbies);
 
-// const copiedPersonPointer = person;
-// console.log(copiedPersonPointer);
+// // const person = {
+// //     name:"Max",
+// //     age:30
+// // };
 
-const add = (...numbers: number[])=> {
-    return numbers.reduce((currentResult, currentValue ) => {
-        return currentResult + currentValue;
-    },0 );
+// // const copiedPerson = {...person};
+// // console.log(copiedPerson);
 
-};
+// // const copiedPersonPointer = person;
+// // console.log(copiedPersonPointer);
 
-//-----------------if you want a specific number of args ----
-
-// const add = (...numbers: [number, number, number])=> {
+// const add = (...numbers: number[])=> {
 //     return numbers.reduce((currentResult, currentValue ) => {
 //         return currentResult + currentValue;
 //     },0 );
 
 // };
 
-const addedNumbers = add(5, 10, 2, 3.7 );
-console.log(addedNumbers);
+// //-----------------if you want a specific number of args ----
+
+// // const add = (...numbers: [number, number, number])=> {
+// //     return numbers.reduce((currentResult, currentValue ) => {
+// //         return currentResult + currentValue;
+// //     },0 );
+
+// // };
+
+// const addedNumbers = add(5, 10, 2, 3.7 );
+// console.log(addedNumbers);
+
+
+const hobbies = ["sports", "cooking"];
+
+// const hobby1 = hobbies [0];
+// const hobby2 = hobbies [1];
+
+// const [hobby1, hobby2] = hobbies;
+
+const [hobby1, hobby2, ...remainingHobbies] = hobbies;
+
+console.log(hobbies, hobby1, hobby2);
+
+
+
+const person = {
+    firstName:"Max",
+    age:30
+};
+
+const {firstName: userName, age } = person;
+
+console.log(userName, age, person);
+
+
+
+
+
