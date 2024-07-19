@@ -21,3 +21,32 @@ const button = document.querySelector('button');
 if(button){
     button.addEventListener('click', event => console.log(event));
 }
+
+const hobbies = ["sports", "cooking"];
+
+// console.log(hobbies[0]);
+
+const activeHobbies = ["hiking"];
+
+activeHobbies.push(hobbies[0], hobbies[1]);
+
+// activeHobbies.push(...hobbies);
+
+// activeHobbies.push(hobbies[0], hobbies[1]);
+
+// console.log(activeHobbies);
+
+const allHobbies = ["reading", ...hobbies];
+
+console.log(allHobbies);
+
+const person = {
+    name:"Max",
+    age:30
+};
+
+const copiedPerson = {...person};
+console.log(copiedPerson);
+
+const copiedPersonPointer = person;
+console.log(copiedPersonPointer);
