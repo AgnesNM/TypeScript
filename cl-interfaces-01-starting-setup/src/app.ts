@@ -1,6 +1,7 @@
 // Code goes here!
 
 class Department {
+    static fiscalYear = 2023;
     // name: string = 'DEFAULT';
     // private readonly id: string;
     // private  name: string;
@@ -9,6 +10,11 @@ class Department {
     constructor (private readonly id: string, public name:string) {
         // this.id = id;
         // this.name = n;
+        console.log(Department.fiscalYear);
+    }
+
+    static createEmployee(name:string){
+        return { name: name };
     }
 
     describe (this: Department){
@@ -24,6 +30,12 @@ class Department {
         console.log(this.employees);
     }
 }
+
+const employee1 = Department.createEmployee("Faith");
+// console.log(employee1);
+
+const year = Department.fiscalYear;
+console.log(year);
 
 class ITDepartment extends Department {
     admins: string[];
@@ -44,7 +56,7 @@ IT.addEmployee("Nduta");
 // IT.describe();
 // IT.printEmployeeInfo();
 
-console.log(IT);
+// console.log(IT);
 
 class AccountingDepartment extends Department {
     private lastReport:string;
@@ -85,11 +97,11 @@ class AccountingDepartment extends Department {
     }
 }
 
-const accounting = new AccountingDepartment("id3", []);
+// const accounting = new AccountingDepartment("id3", []);
 
-accounting.mostRecentReport = 'Year End Report';
-accounting.addReport("Report1");
-console.log(accounting.mostRecentReport);
+// accounting.mostRecentReport = 'Year End Report';
+// accounting.addReport("Report1");
+// console.log(accounting.mostRecentReport);
 
 // accounting.printReports();
 
@@ -103,3 +115,9 @@ console.log(accounting.mostRecentReport);
 // const ITCopy = { name: 'DUMMY', describe: IT.describe };
 
 // console.log(ITCopy.describe());
+
+
+// ------------static properties and methods-----
+
+// console.log(Math.PI);
+// console.log(Math.pow(2,3));
