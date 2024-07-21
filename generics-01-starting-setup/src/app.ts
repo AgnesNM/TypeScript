@@ -34,13 +34,13 @@ const names: Array <string> = []; // Generic type Array which is equal to string
 
 //---Custom Generics ---
 
-function merge<T, U>(objA:T, objB:U) {
+function merge<T extends object, U extends object>(objA:T, objB:U) {
     return Object.assign(objA, objB);
 }
 
 // console.log(merge({ name: "Abby"}, {age: 30}));
 
-const mergedObj = merge({ name: "Abby", hobbies: ["Sports"]}, {age: 30});
+const mergedObj = merge({ name: "Abby", hobbies: ["Sports"]}, {age:30});
 
 console.log(mergedObj.age);
 
