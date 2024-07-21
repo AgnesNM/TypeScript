@@ -79,17 +79,6 @@ function add (a: Combinable, b: Combinable){
 const result = add ("Max", 1);
 // console.log(result.split(''));
 
-//---Optional chaining----
-
-const fetchedUserData = {
-    id: "u1",
-    name: "Ndush",
-    job : { title: "CEO", description: "My own company"}
-}
-
-// console.log(fetchedUserData.job && fetchedUserData.job.title);
-console.log(fetchedUserData?.job?.title);
-
 // type UnknownEmployee = Employee | Admin;
 
 // function printEmployeeInformation (emp: UnknownEmployee){
@@ -204,6 +193,26 @@ console.log(fetchedUserData?.job?.title);
 //     userName: "Must start with a capital character!"
 // };
 
+//---Optional chaining----
+
+const fetchedUserData = {
+    id: "u1",
+    name: "Ndush",
+    job : { title: "CEO", description: "My own company"}
+}
+
+// console.log(fetchedUserData.job && fetchedUserData.job.title);
+console.log(fetchedUserData?.job?.title);
 
 
+//----Nullish Coalescing---
+
+// const userInput = '';
+// const storedData = userInput || 'DEFAULT';
+
+const userInput = undefined;
+
+const storedData = userInput ?? 'DEFAULT';
+
+console.log(storedData);
 
