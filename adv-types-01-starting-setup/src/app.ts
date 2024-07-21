@@ -149,7 +149,7 @@ type Animal = Bird | Horse;
 
 function moveAnimal(animal: Animal){
     let speed;
-    switch(animal.type){        
+    switch(animal.type){
         case "bird":
             speed = animal.flyingSpeed;
             break
@@ -160,4 +160,30 @@ function moveAnimal(animal: Animal){
 }
 
 moveAnimal({type: "bird", flyingSpeed: 20});
+
+moveAnimal({type: "horse", runningSpeed: 100});
+
+// const userInputElement = <HTMLInputElement>document.getElementById('user_input')!;
+// const userInputElement = document.getElementById('user_input') as HTMLInputElement;
+
+const userInputElement = document.getElementById('user_input');
+
+if (userInputElement) {
+    (userInputElement as HTMLInputElement).value = "Hi there!";
+}
+
+
+//---Index Types---
+
+interface ErrorContainer {
+    [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+    email: "Not a valid email!",
+    userName: "Must start with a capital character!"
+};
+
+
+
 
