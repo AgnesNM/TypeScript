@@ -42,7 +42,7 @@ function merge<T extends object, U extends object>(objA:T, objB:U) {
 
 const mergedObj = merge({ name: "Abby", hobbies: ["Sports"]}, {age:30});
 
-console.log(mergedObj.age);
+// console.log(mergedObj.age);
 
 interface Lengthy {
     length: number;
@@ -58,14 +58,78 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string]{
     return [element, descriptionText ]; // Tuple
 }
 
-console.log(countAndDescribe("Hi there!"));
+// console.log(countAndDescribe("Hi there!"));
 
-console.log(countAndDescribe(["Sports", "Cooking"]));
+// console.log(countAndDescribe(["Sports", "Cooking"]));
 
-console.log(countAndDescribe([]));
+// console.log(countAndDescribe([]));
 
 function extractAndConvert<T extends object, U extends keyof T> (obj: T, key: U){
     return "Value: " + obj[key];
 }
 
-console.log(extractAndConvert({name: "Abby"}, "name"));
+// console.log(extractAndConvert({name: "Abby"}, "name"));
+
+
+// ------Generic Classes -----
+
+class DataStorage<T> {
+    private data: T[]  = [];
+
+    addItem (item: T){
+        this.data.push(item);
+    }
+
+    removeItem(item: T){
+        //---Object Workaround
+        if(this.data.indexOf(item) === -1){
+            return;
+        }
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+
+    getItems (){
+        return [...this.data];
+    }
+}
+
+//---Alternative---working with primitives
+
+// class DataStorage<T extends string | number | boolean> {
+//     private data: T[]  = [];
+
+//     addItem (item: T){
+//         this.data.push(item);
+//     }
+
+//     removeItem(item: T){
+//         //---Object Workaround
+//         if(this.data.indexOf(item) === -1){
+//             return;
+//         }
+//         this.data.splice(this.data.indexOf(item), 1);
+//     }
+
+//     getItems (){
+//         return [...this.data];
+//     }
+// }
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem("A string");
+
+textStorage.addItem("Second string");
+textStorage.removeItem("A string");
+
+// console.log(textStorage.getItems());
+
+const objStorage = new DataStorage<object>();
+const johnObject = {name: "John"};
+
+objStorage.addItem(johnObject);
+objStorage.addItem({name:"Bosco"});
+// //...
+// objStorage.removeItem({name: "Bosco"});
+
+objStorage.removeItem(johnObject);
+console.log(objStorage.getItems());
