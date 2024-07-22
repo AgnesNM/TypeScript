@@ -132,4 +132,51 @@ objStorage.addItem({name:"Bosco"});
 // objStorage.removeItem({name: "Bosco"});
 
 objStorage.removeItem(johnObject);
-console.log(objStorage.getItems());
+// console.log(objStorage.getItems());
+
+
+//---Generic Utility Types
+
+interface CourseGoal {
+    title: string;
+    description: string;
+    completeUntil:Date;
+}
+
+// function createCourseGoal (title: string, description: string, date:Date): CourseGoal{
+//     return {title: title, description: description, completeUntil:date};
+// }
+
+function createCourseGoal (
+    title: string,
+    description: string,
+    date:Date
+): CourseGoal{
+    let courseGoal:Partial<CourseGoal>= {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal as CourseGoal;
+}
+
+const users: Readonly<string []> = ["Abby", "Mwaniki"];
+// users.push("Nduta");
+// users.pop();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
